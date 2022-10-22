@@ -1,4 +1,9 @@
 -- Databricks notebook source
+-- MAGIC %md 
+-- MAGIC You may find this series of notebooks at https://github.com/databricks-industry-solutions/omop-cdm. For more information about this solution accelerator, visit https://www.databricks.com/blog/2021/07/19/unlocking-the-power-of-health-data-with-a-modern-data-lakehouse.html.
+
+-- COMMAND ----------
+
 -- MAGIC %md
 -- MAGIC # ETL: Synthea to OMOP531
 -- MAGIC Now that all tables and schemas are defined, we need to ETL the data from the source to OMOP model. Note that ETL process is heavily dependent on the source data model which varies from institution to institution. Arguably writing the ETL is the most time consuming part of the process. 

@@ -1,4 +1,9 @@
 -- Databricks notebook source
+-- MAGIC %md 
+-- MAGIC You may find this series of notebooks at https://github.com/databricks-industry-solutions/omop-cdm. For more information about this solution accelerator, visit https://www.databricks.com/blog/2021/07/19/unlocking-the-power-of-health-data-with-a-modern-data-lakehouse.html.
+
+-- COMMAND ----------
+
 -- MAGIC %md
 -- MAGIC # OMOP Vocabulary Setup
 -- MAGIC Construct vocabulary tables, based on tables downloaded from [Athena](https://athena.ohdsi.org/search-terms/start) website and available here on `s3://hls-eng-data-public/data/rwe/omop-vocabs/`
