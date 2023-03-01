@@ -166,7 +166,7 @@
 
 # MAGIC %md
 # MAGIC ## Example 4. Finding drugs that are commonly prescribed together
-# MAGIC In this example, let's take a look at the association between drugs. For example, in an study of prescription drugs, we might be interested in learning which drugs are more likely prescribed together compared to what would be expected at random. For this analysis, we use two apporaches: first we apply a simple probabilistic approach, which uses the [cosine measure](https://michael.hahsler.net/research/association_rules/measures.html#support) to quantify the degree of association between a pair of events (in this case, `drug1` and `drug2` being used during the same drug era). Next, we use the FP-Growth alogorithm from [spark mlLib](https://spark.apache.org/docs/latest/ml-frequent-pattern-mining.html#frequent-pattern-mining) to identify frequent patterns for prescription drugs. This is a similar approach to market basket analysis (or affinity analytics).
+# MAGIC In this example, let's take a look at the association between drugs. For example, in an study of prescription drugs, we might be interested in learning which drugs are more likely prescribed together compared to what would be expected at random. For this analysis, we use two approaches: first we apply a simple probabilistic approach, which uses the [cosine measure](https://michael.hahsler.net/research/association_rules/measures.html#support) to quantify the degree of association between a pair of events (in this case, `drug1` and `drug2` being used during the same drug era). Next, we use the FP-Growth algorithm from [spark mlLib](https://spark.apache.org/docs/latest/ml-frequent-pattern-mining.html#frequent-pattern-mining) to identify frequent patterns for prescription drugs. This is a similar approach to market basket analysis (or affinity analytics).
 
 # COMMAND ----------
 
@@ -176,7 +176,7 @@
 # MAGIC First we need to define a criteria for considering two drugs being prescribed together. 
 # MAGIC For simplicity, let's first define a time interval \\(\Delta\\) and consider two drugs being prescribed together if:
 # MAGIC $$ |t_1-t_2| < \Delta$$ and $$|s_1-s_2|<\Delta$$
-# MAGIC in which \\(t_i,s_i\\) are the start and end times for taking drug \\(i\\) by a patient respectively. Using this criteria, we can then compile a list of drug pairs that have been associated with eachother based on being prescribed within the same time period.
+# MAGIC in which \\(t_i,s_i\\) are the start and end times for taking drug \\(i\\) by a patient respectively. Using this criteria, we can then compile a list of drug pairs that have been associated with each other based on being prescribed within the same time period.
 # MAGIC First let's create a dataset of drug pairs, paired according to the above criteria, and relevant summary statistics such as [support](https://michael.hahsler.net/research/association_rules/measures.html#support) that we then will use to calculate the cosine metrics for association. 
 
 # COMMAND ----------
@@ -310,8 +310,8 @@
 
 # MAGIC %md
 # MAGIC ### 4.2 Frequent Pattern Mining
-# MAGIC Now let's take a deeper look into frequent patterns. We use the FP-Growth alogorithm from [spark mlLib](https://spark.apache.org/docs/latest/ml-frequent-pattern-mining.html#frequent-pattern-mining) to identify frequent patterns for prescription drugs. This is a similar approach to market basket analysis (or affinity analytics), in which items linked to a given transaction are analyzed to identify affinity patterns. In our case, a transaction corresponds to a given drug era record and we consider two items (drugs in this case) to have co-occured together based on our definition provided in the first part of this example. 
-# MAGIC In the following cell, we switch to python to create a dataset which each row of the dataset corresponds to drugs that have co-occured within the same time interval 
+# MAGIC Now let's take a deeper look into frequent patterns. We use the FP-Growth algorithm from [spark mlLib](https://spark.apache.org/docs/latest/ml-frequent-pattern-mining.html#frequent-pattern-mining) to identify frequent patterns for prescription drugs. This is a similar approach to market basket analysis (or affinity analytics), in which items linked to a given transaction are analyzed to identify affinity patterns. In our case, a transaction corresponds to a given drug era record and we consider two items (drugs in this case) to have co-occurred together based on our definition provided in the first part of this example. 
+# MAGIC In the following cell, we switch to python to create a dataset which each row of the dataset corresponds to drugs that have co-occurred within the same time interval 
 # MAGIC \\( t+\Delta; \Delta=\pm 5 \\) days.
 
 # COMMAND ----------
@@ -345,7 +345,7 @@
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC now we use FPGrowth algorithm from `spark.mllib` to find the most frequent patterns. Note that we are using `rdd` api to feed data to the algroithm. In addition to the dataset
+# MAGIC now we use FPGrowth algorithm from `spark.mllib` to find the most frequent patterns. Note that we are using `rdd` api to feed data to the algorithm. In addition to the dataset
 # MAGIC we also need to specify a minimum threshold for a particular pattern to be considered significant. 
 
 # COMMAND ----------

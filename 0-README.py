@@ -6,7 +6,7 @@
 
 # MAGIC %md
 # MAGIC # OMOP 5.31 with databricks
-# MAGIC In this solution accelerator, we will build a Common Data Model for bservational research based on OMOP 5.31 CDM, on databricks lakehouse platform.
+# MAGIC In this solution accelerator, we will build a Common Data Model for observational research based on OMOP 5.31 CDM, on databricks lakehouse platform.
 # MAGIC <div >
 # MAGIC   <img src="https://drive.google.com/uc?export=view&id=1cTlUMLNyuCZFc3H04n9DxB3NxfY86Wkw", width=1500>
 # MAGIC </div>
@@ -62,12 +62,12 @@
 # MAGIC %md
 # MAGIC ### Dataset
 # MAGIC To simulate health records, we used [Synthea](https://github.com/synthetichealth/synthea) to generate `~90K` synthetic patients, from across the US. You can also access sample raw `csv` files in `/databricks-datasets/ehr/rwe/csv` for 10K patients.
-# MAGIC By running `../1-data-ingest` you create the brozne tables based on the pre-simulated synthetic records.
+# MAGIC By running `../1-data-ingest` you create the bronze tables based on the pre-simulated synthetic records.
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC # LICENCE 
+# MAGIC # LICENSE 
 
 # COMMAND ----------
 
