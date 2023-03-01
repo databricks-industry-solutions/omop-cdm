@@ -8,7 +8,7 @@
 # MAGIC # Congestive Heart Failure cohort study
 # MAGIC <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Blausen_0463_HeartAttack.png" width=300>
 # MAGIC 
-# MAGIC In this example we create a chort of patients that have recently been diagnosed with Congestive Heart Failure. In this hypothetical study, we would like to calcuate the rates of ER admissions between different age groups and genders, for this cohort. This example is based on an example study from [The Book of OHDSI](https://ohdsi.github.io/TheBookOfOhdsi/SqlAndR.html#designing-a-simple-study). The main purpose of this excercise is to show users how to build cohorts with standard SQL directly on delta tables.
+# MAGIC In this example we create a cohort of patients that have recently been diagnosed with Congestive Heart Failure. In this hypothetical study, we would like to calculate the rates of ER admissions between different age groups and genders, for this cohort. This example is based on an example study from [The Book of OHDSI](https://ohdsi.github.io/TheBookOfOhdsi/SqlAndR.html#designing-a-simple-study). The main purpose of this exercise is to show users how to build cohorts with standard SQL directly on delta tables.
 # MAGIC 
 # MAGIC >Heart failure, sometimes known as congestive heart failure, occurs when your heart muscle doesn't pump blood as well as it should. Certain conditions, such as narrowed arteries in your heart (coronary artery disease) or high blood pressure, gradually leave your heart too weak or stiff to fill and pump efficiently.
 # MAGIC >
@@ -22,7 +22,7 @@
 
 # MAGIC %md
 # MAGIC ### 1. Target Cohort
-# MAGIC First we define the [target cohort](https://ohdsi.github.io/TheBookOfOhdsi/Cohorts.html), which is determind based on the following criteria:
+# MAGIC First we define the [target cohort](https://ohdsi.github.io/TheBookOfOhdsi/Cohorts.html), which is determined based on the following criteria:
 # MAGIC 
 # MAGIC Patients who are newly:
 # MAGIC - diagnosed with chronic congestive heart failure (CCHF)
@@ -175,7 +175,7 @@ createOrReplaceTempView(union(target_cohort_df,outcome_cohort_df),'CHF_cohort')
 
 # MAGIC %md
 # MAGIC ## 4. Write Cohorts to Results Schema
-# MAGIC To ensure reproducibility and accesibility of results to other researchers, or regulators it is important to ensure that cohorts are stored and accesible. This is done by writing resulting cohorts, as well as cohort defintion (information regarding how the cohort is created including the `sql` code used to create the cohort) into the Results Schema:
+# MAGIC To ensure reproducibility and accessibility of results to other researchers, or regulators it is important to ensure that cohorts are stored and accessible. This is done by writing resulting cohorts, as well as cohort definition (information regarding how the cohort is created including the `sql` code used to create the cohort) into the Results Schema:
 
 # COMMAND ----------
 
